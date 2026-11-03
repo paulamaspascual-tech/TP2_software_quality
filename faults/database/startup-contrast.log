@@ -1,0 +1,55 @@
+ Container log8371-tp2-kc-run-cffb7b2e22d3 Creating 
+ Container log8371-tp2-kc-run-cffb7b2e22d3 Created 
+Updating the configuration and installing your custom providers, if any. Please wait.
+2026-11-03 16:53:39,846 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index org.springframework.core.io.DefaultResourceLoader: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,847 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index org.springframework.core.io.ResourceLoader: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,849 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index org.apache.tools.ant.Task: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,859 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index org.springframework.core.io.Resource: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,875 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index io.mashona.logwriting.ArrayStore: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,876 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index org.apache.activemq.artemis.core.journal.RecordInfo: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,877 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index org.apache.activemq.artemis.core.journal.Journal: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,880 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index jakarta.jms.XAConnection: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,880 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index jakarta.jms.XASession: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,880 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index jakarta.jms.XAConnectionFactory: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:39,894 WARN  [io.qua.dep.ind.IndexWrapper] (build-53) Failed to index jakarta.jms.Connection: Class does not exist in ClassLoader QuarkusClassLoader:Deployment Class Loader: PROD for keycloak@130a0f66
+2026-11-03 16:53:41,329 INFO  [io.qua.dep.QuarkusAugmentor] (main) Quarkus augmentation completed in 2888ms
+2026-11-03 16:53:41,886 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: false
+2026-11-03 16:53:42,461 WARN  [io.quarkus.agroal.runtime.DataSources] (JPA Startup Thread) Datasource <default> enables XA but transaction recovery is not enabled. Please enable transaction recovery by setting quarkus.transaction-manager.enable-recovery=true, otherwise data may be lost if the application is terminated abruptly
+2026-11-03 16:53:42,529 WARN  [io.agroal.pool] (agroal-11) Datasource '<default>': The connection attempt failed.
+2026-11-03 16:53:42,529 WARN  [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator] (JPA Startup Thread) HHH000342: Could not obtain connection to query metadata: java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jta.internal.JtaIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaIsolationDelegate.doTheWork(JtaIsolationDelegate.java:186)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaIsolationDelegate.lambda$delegateWork$1(JtaIsolationDelegate.java:75)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaIsolationDelegate.doInSuspendedTransaction(JtaIsolationDelegate.java:107)
+	at org.hibernate.resource.transaction.backend.jta.internal.JtaIsolationDelegate.delegateWork(JtaIsolationDelegate.java:72)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:52)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.internal.SessionFactoryOptionsBuilder.<init>(SessionFactoryOptionsBuilder.java:276)
+	at io.quarkus.hibernate.orm.runtime.recording.PrevalidatedQuarkusMetadata.buildSessionFactoryOptionsBuilder(PrevalidatedQuarkusMetadata.java:70)
+	at io.quarkus.hibernate.orm.runtime.boot.FastBootEntityManagerFactoryBuilder.build(FastBootEntityManagerFactoryBuilder.java:84)
+	at io.quarkus.hibernate.orm.runtime.FastBootHibernatePersistenceProvider.createEntityManagerFactory(FastBootHibernatePersistenceProvider.java:72)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:80)
+	at jakarta.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$LazyPersistenceUnit.get(JPAConfig.java:157)
+	at io.quarkus.hibernate.orm.runtime.JPAConfig$1.run(JPAConfig.java:64)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2026-11-03 16:53:42,627 WARN  [org.infinispan.CONFIG] (keycloak-cache-init) ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+2026-11-03 16:53:42,669 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000556: Starting user marshaller 'org.infinispan.jboss.marshalling.core.JBossUserMarshaller'
+2026-11-03 16:53:42,875 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (main) Node name: node_633458, Site name: null
+2026-11-03 16:53:42,876 INFO  [org.keycloak.broker.provider.AbstractIdentityProviderMapper] (main) Registering class org.keycloak.broker.provider.mappersync.ConfigSyncEventListener
+2026-11-03 16:53:42,878 WARN  [io.agroal.pool] (agroal-11) Datasource '<default>': The connection attempt failed.
+2026-11-03 16:53:42,891 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Failed to start server in (development) mode
+2026-11-03 16:53:42,891 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Failed to obtain JDBC connection
+2026-11-03 16:53:42,891 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: The connection attempt failed.
+2026-11-03 16:53:42,891 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: db
+2026-11-03 16:53:42,891 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) For more details run the same command passing the '--verbose' option. Also you can use '--help' to see the details about the usage of the particular command.
+

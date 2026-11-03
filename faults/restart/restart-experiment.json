@@ -1,0 +1,30 @@
+{
+  "n": 1629,
+  "failures": 130,
+  "error_rate": 0.0798035604665439,
+  "population": "measurement rows; successful and failed requests",
+  "estimator": "linear interpolation at (n-1)*p",
+  "mean_ms": 131.9577999926335,
+  "percentiles_ms": {
+    "p50": 136.733959,
+    "p95": 162.8745918,
+    "p99": 185.79071676000004
+  },
+  "bootstrap_ci95_ms": {
+    "p50": [
+      136.036083,
+      137.67430242499998
+    ],
+    "p95": [
+      160.71345964999998,
+      165.08050253999997
+    ],
+    "p99": [
+      177.69753291799998,
+      380.7449615200066
+    ]
+  },
+  "bootstrap_repetitions": 1000,
+  "seed": 8371,
+  "limitation": "IID request bootstrap does not capture temporal dependence or host uncertainty"
+}

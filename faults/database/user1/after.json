@@ -1,0 +1,29 @@
+{
+  "n": 1002,
+  "failures": 0,
+  "error_rate": 0.0,
+  "mean_ms": 146.07468490918163,
+  "percentiles_ms": {
+    "p50": 145.18620900000002,
+    "p95": 162.0597069,
+    "p99": 173.99699426
+  },
+  "bootstrap_ci95_ms": {
+    "p50": [
+      144.4967533125,
+      145.845125
+    ],
+    "p95": [
+      161.103667,
+      164.0338787025
+    ],
+    "p99": [
+      169.16252833,
+      175.804916
+    ]
+  },
+  "estimator": "linear interpolation at (n-1)*p",
+  "bootstrap_repetitions": 1000,
+  "seed": 8371,
+  "limitation": "IID request bootstrap does not capture temporal dependence or host uncertainty"
+}

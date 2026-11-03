@@ -1,0 +1,11 @@
+# Fault card — Database stopped during authentication
+
+- **Steady-state claim:** Under the baseline workload, the token endpoint has p95 latency below 200 ms and an error rate of at most 1%.
+- **Fault:** Stop PostgreSQL with `docker compose stop db` during a 60-second run, then restore it with `docker compose start db` within 20 seconds.
+- **Workload:** 10 closed-loop Locust users, 0.1–0.3 s think time, 5 s warm-up, 5 s request timeout, and the direct Keycloak endpoint.
+- **Blast radius:** Authentication requests may fail or become slower while PostgreSQL is unavailable. The original database volume is preserved.
+- **Stop condition:** Restore PostgreSQL no later than 20 seconds after stopping it, and stop the run if errors are sustained or Keycloak does not recover.
+- **Arms:** Run separately with warmed `user1` and never-authenticated-since-restart `user30`. Explicitly authenticate `user1` while the database is up before its fault arm.
+- **Analysis windows:** Before, during, and after boundaries are recorded from the exact UTC injection and recovery timestamps and elapsed offsets in the complete raw CSV.
+- **Observed:** `user1` was explicitly authenticated after the Keycloak restart and before its run; `user30` had not authenticated since that restart. PostgreSQL was stopped at approximately elapsed 15 s for 10 s and restored within the required 20-second window. Neither arm recorded an error in the analysed before, during, or after windows. For `user1`, p95 was 162.07 ms before, 166.49 ms during, and 162.06 ms after. For `user30`, p95 was 166.07 ms before, 178.34 ms during, and 172.36 ms after. Each phase's JSON file reports `n`, mean, p50/p95/p99, and IID-bootstrap 95% CIs. The separate DB-down startup contrast exited with status 1 when Keycloak was run with `--no-deps` while PostgreSQL was stopped; PostgreSQL and the original Keycloak were then restored.
+- **What this shows:** This workload did not expose database unavailability as authentication errors, even for the user that had not authenticated since the Keycloak restart. The result is conditional on this Keycloak version, cache state, request rate, and 10-second fault window; it does not establish database-failure resilience for all users, longer outages, or database-dependent operations.
